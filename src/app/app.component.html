@@ -1,0 +1,88 @@
+<style>
+  /* Responsive Styles */
+  @media screen and (max-width: 767px) {
+
+    svg#rocket-smoke {
+      right: 120px;
+      transform: rotate(-5deg);
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    svg#rocket-smoke {
+      display: none;
+      visibility: hidden;
+    }
+  }
+</style>
+  <mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>home</mat-icon>
+    </button>
+    <span>EfficientTrip</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button 
+      class="example-icon" 
+      aria-label="Example icon-button with share icon"
+      (click)="signInWithGoogle()">
+      Login with Google
+    </button>
+    <button mat-icon-button 
+      class="example-icon" 
+      aria-label="Example icon-button with share icon"
+      (click)="signInWithFacebook()">
+      Login with Facebook
+    </button>
+    <button mat-icon-button 
+      class="example-icon" 
+      aria-label="Example icon-button with share icon"
+      (click)="signOut()">
+      Sign Out
+    </button>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-container">
+    <mat-sidenav mode="side" opened>
+      <mat-nav-list role="list">
+        <mat-list-item [matMenuTriggerFor]="submenuCalander" role="listitem">
+           Calander
+        </mat-list-item>
+          <mat-menu #submenuCalander="matMenu">
+            <button mat-menu-item>Enter the tournament</button>
+            <button mat-menu-item>Tournamant List</button>
+            <button mat-menu-item>Entry Fee</button>
+            <button mat-menu-item>Travel options</button>
+            <button mat-menu-item>Planner</button>
+          </mat-menu>
+        
+        <mat-list-item role="listitem" [matMenuTriggerFor]="submenuStays">
+          <a matLine >Stays</a>
+          
+          <mat-menu #submenuStays="matMenu">
+            <button mat-menu-item>Regular Hosts</button>
+            <button mat-menu-item>Profession Specific Hosts</button>
+            <button mat-menu-item>Manual Entry</button>
+            <button mat-menu-item>Host Verification</button>
+          </mat-menu>
+        </mat-list-item>
+        <mat-list-item role="listitem">Bus</mat-list-item>
+        <mat-list-item role="listitem">Payment Gateway Integration</mat-list-item>
+        <mat-list-item role="listitem">Chess Player Data</mat-list-item>
+        <mat-list-item role="listitem">Flight/Hotel Booking</mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <ng-container *ngIf="loggedIn">
+        <mat-list>
+          <mat-list-item> Name: {{user.name}} </mat-list-item>
+          <mat-list-item> EMail: {{user.email}} </mat-list-item>
+          <br><br><br><br><br><br><br>
+          <mat-list-item> Photo:
+            <img [src]="user.photoUrl" /> 
+          </mat-list-item>
+         </mat-list>
+      </ng-container>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
