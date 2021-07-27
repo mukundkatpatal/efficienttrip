@@ -1,0 +1,49 @@
+  <div fxFlex fxFlexOffset="20px" class="form-size">
+    <h3>Send us your details</h3>
+    <p>{{ tournamentForm.value | json }}</p>
+
+    <form novalidate [formGroup]="tournamentForm" (ngSubmit)="onSubmit()">
+      <p>
+        <mat-form-field class="half-width">
+          <input matInput formControlName="name" placeholder="Name of tournament" type="text" required>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="half-width">
+          <input matInput formControlName="place" placeholder="Place of tournament" type="text" required>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field class="half-width">
+          <input matInput formControlName="startd" placeholder="Start date" type="date" required>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="half-width">
+          <input matInput formControlName="endd" placeholder="End date" type="date" required>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="half-width">
+          <input matInput formControlName="rounds" placeholder="No. of rounds" type="number" required>
+        </mat-form-field>
+      </p>
+      <!-- <p>
+        <mat-form-field class="half-width">
+         <mat-slider formControlName="rounds" thumbLabel tickInterval="5" min="1" max="10" step="1" value="10"></mat-slider>
+        </mat-form-field>
+      </p> -->
+      <p>
+        <mat-form-field class="half-width">
+          <input matInput formControlName="category" placeholder="Category" type="text" required>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="half-width">
+          <input matInput formControlName="website" placeholder="Website" type="text" required>
+        </mat-form-field>
+      </p>
+      
+      <button type="submit" mat-button class="background-primary text-floral-white" [disabled]="tournamentForm.invalid">Submit</button>
+    </form>
+  </div>

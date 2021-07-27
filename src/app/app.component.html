@@ -41,6 +41,8 @@
     </button>
   </mat-toolbar>
 
+<router-outlet></router-outlet>
+
   <mat-sidenav-container class="example-container">
     <mat-sidenav mode="side" opened>
       <mat-nav-list role="list">
@@ -48,7 +50,7 @@
            Calander
         </mat-list-item>
           <mat-menu #submenuCalander="matMenu">
-            <button mat-menu-item>Enter the tournament</button>
+            <button mat-menu-item routerLink="/tournamentForm">Enter the tournament</button>
             <button mat-menu-item>Tournamant List</button>
             <button mat-menu-item>Entry Fee</button>
             <button mat-menu-item>Travel options</button>
@@ -85,4 +87,3 @@
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
-
