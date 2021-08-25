@@ -5,26 +5,26 @@
 <form [formGroup]="profileForm" class="et">
     <mat-form-field>
         <input matInput class="textbox" formControlName="tournamentName" placeholder="Tournament Name *">
-    </mat-form-field>
+    </mat-form-field><br><br>
 
     <mat-form-field>
         <input matInput class="textbox" formControlName="place" placeholder="Place *">
-    </mat-form-field>
+    </mat-form-field><br><br>
 
     
     <mat-form-field>
         <input matInput class="textbox" formControlName="round" placeholder="Round *">
-    </mat-form-field>
+    </mat-form-field><br><br>
 
     <mat-form-field>
         <input matInput class="textbox" formControlName="category" placeholder="Category *">
-    </mat-form-field>
+    </mat-form-field><br><br>
 
     <mat-form-field>
         <input matInput class="textbox" placeholder="Enter your url" formControlName="website" />
         <!-- <div *ngIf="f.website?.errors?.required"></div>
         <div *ngIf="f.website?.errors?.pattern">Please enter valid url.</div> -->
-    </mat-form-field>
+    </mat-form-field><br><br>
     <mat-form-field appearance="fill">
         <mat-label>Enter a date range</mat-label>
         <mat-date-range-input  [rangePicker]="picker">
@@ -42,8 +42,8 @@
 
     <!--<button type="button">Submit</button>-->
     <button mat-raised-button class="btn" (click)="validateForm()">Submit</button><br><br>
-    <p>Form Status: {{ profileForm.status | json }}</p>
-    <p>Form Status: {{ profileForm.value | json }}</p>
+    <!-- <p>Form Status: {{ profileForm.status | json }}</p>
+    <p>Form Status: {{ profileForm.value | json }}</p> -->
     <p>Complete the form to enable button.</p>
 
 </div>
