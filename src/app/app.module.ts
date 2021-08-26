@@ -1,6 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
+// import { tournaament-form.Component} from './tournament-form/tournament-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
+import {MatButtonModule} from '@angular/material/button';
+
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,10 +29,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
+import { TournamentFormComponent } from './tournament-form/tournament-form.component';
  
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TournamentFormComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +45,19 @@ import { MatMenuModule } from '@angular/material/menu';
     MatSidenavModule,
     MatListModule,
     MatMenuModule,
-    SocialLoginModule
+    SocialLoginModule,
+    
+    ReactiveFormsModule,
+    FormsModule,
+    
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatRippleModule,
+    MatButtonModule
+ 
   ],
   providers: [
     {
